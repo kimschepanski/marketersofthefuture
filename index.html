@@ -21,6 +21,9 @@
         #inputContainer {
             text-align: center;
         }
+        h2 {
+            color: white; /* Schriftfarbe für "Wie heißt du?" */
+        }
         #nameInput {
             width: 300px; /* Breite des Eingabefelds */
             height: 40px; /* Höhe des Eingabefelds */
@@ -28,7 +31,7 @@
             margin-bottom: 20px; /* Abstand zwischen Eingabefeld und Button */
             border: 2px solid #ADD8E6; /* Hellblauer Rahmen */
             background-color: transparent; /* Keine Hintergrundfüllung */
-            color: black; /* Textfarbe im Eingabefeld */
+            color: white; /* Textfarbe im Eingabefeld auf weiß geändert */
             border-radius: 5px; /* Abgerundete Ecken */
             padding-left: 10px; /* Innenabstand links */
         }
@@ -67,16 +70,30 @@
 
     <script>
         function showStatement() {
-            const name = document.getElementById('nameInput').value;
+            const name = document.getElementById('nameInput').value.trim();
             const resultDiv = document.getElementById('result');
             
-            if (name) {
-                resultDiv.innerHTML = `Hier ist dein Statement, ${name}!`;
-                resultDiv.style.display = 'block';
-                document.getElementById('inputContainer').style.display = 'none';
-            } else {
-                alert('Bitte gib deinen Namen ein.');
+            let statement = `Hier ist dein Statement, ${name}!`; // Standardtext
+
+            // Personalisierte Ausgaben
+            switch (name) {
+                case 'Kim':
+                    statement = 'Danke für den Kuchen!';
+                    break;
+                case 'Katrin':
+                    statement = 'Ich esse gerne Kuchen!';
+                    break;
+                case 'Caro':
+                    statement = 'Der Kuchen war super!';
+                    break;
+                default:
+                    // bleibt der Standardtext
+                    break;
             }
+
+            resultDiv.innerHTML = statement;
+            resultDiv.style.display = 'block';
+            document.getElementById('inputContainer').style.display = 'none';
         }
     </script>
 
