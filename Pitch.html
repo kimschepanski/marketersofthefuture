@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Namensabfrage</title>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400&display=swap" rel="stylesheet"> <!-- Google Font für Ubuntu -->
+    <style>
+        body {
+            background-image: url('Hintergrund.png'); /* Hier den Pfad zu deinem Bild einfügen */
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Ubuntu', sans-serif; /* Schriftart auf Ubuntu gesetzt */
+            color: white; /* Schriftfarbe auf weiß gesetzt */
+        }
+        #inputContainer {
+            text-align: center;
+        }
+        #nameInput {
+            width: 300px; /* Breite des Eingabefelds */
+            height: 40px; /* Höhe des Eingabefelds */
+            font-size: 16px; /* Schriftgröße im Eingabefeld */
+            margin-bottom: 20px; /* Abstand zwischen Eingabefeld und Button */
+            border: 2px solid #ADD8E6; /* Hellblauer Rahmen */
+            background-color: transparent; /* Keine Hintergrundfüllung */
+            color: black; /* Textfarbe im Eingabefeld */
+            border-radius: 5px; /* Abgerundete Ecken */
+            padding-left: 10px; /* Innenabstand links */
+        }
+        button {
+            background-color: #007BFF; /* Blaue Farbe */
+            color: white; /* Textfarbe */
+            border: none; /* Kein Rahmen */
+            border-radius: 5px; /* Abgerundete Ecken */
+            padding: 10px 20px; /* Innenabstand */
+            font-size: 16px; /* Schriftgröße */
+            cursor: pointer; /* Zeiger beim Hover */
+            box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3); /* Schatten für den 3D-Effekt */
+            transition: all 0.3s ease; /* Sanfte Übergänge bei Hover */
+        }
+        button:hover {
+            box-shadow: 0 10px 20px rgba(0, 123, 255, 0.5); /* Intensivierter Schatten beim Hover */
+            transform: translateY(-2px); /* Leichte Hebung beim Hover */
+        }
+        #result {
+            display: none;
+            font-size: 2em;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="inputContainer">
+        <h2>Wie heißt du?</h2>
+        <input type="text" id="nameInput" placeholder="Dein Name">
+        <br>
+        <button onclick="showStatement()">Übernehmen</button>
+    </div>
+
+    <div id="result"></div>
+
+    <script>
+        function showStatement() {
+            const name = document.getElementById('nameInput').value;
+            const resultDiv = document.getElementById('result');
+            
+            if (name) {
+                resultDiv.innerHTML = `Hier ist dein Statement, ${name}!`;
+                resultDiv.style.display = 'block';
+                document.getElementById('inputContainer').style.display = 'none';
+            } else {
+                alert('Bitte gib deinen Namen ein.');
+            }
+        }
+    </script>
+
+</body>
+</html>
