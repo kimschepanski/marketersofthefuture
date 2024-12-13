@@ -67,10 +67,10 @@
 <body>
 
     <div id="inputContainer">
-        <h2>Wie heißt du?</h2>
+        <h2>What's your name?</h2>
         <input type="text" id="nameInput" placeholder="Dein Name" required>
         <br>
-        <button onclick="showStatement()">Übernehmen</button>
+        <button onclick="showStatement()">Submit</button>
     </div>
 
     <div id="result"></div>
@@ -80,7 +80,7 @@
             const name = document.getElementById('nameInput').value.trim();
             
             if (!name) { // Eingabevalidierung
-                alert('Bitte gib deinen Namen ein!');
+                alert('Please insert your name!');
                 return; // Abbrechen der Funktion
             }
 
