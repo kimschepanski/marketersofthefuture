@@ -4,56 +4,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Namensabfrage</title>
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400&display=swap" rel="stylesheet"> <!-- Google Font für Ubuntu -->
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400&display=swap" rel="stylesheet">
     <style>
         body {
-            background-image: url('Hintergrund.png'); /* Hier den Pfad zu deinem Bild einfügen */
+            background-image: url('Picture6.png'); /* Standard Hintergrundbild */
             background-size: cover;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: flex-start; /* Vertikale Ausrichtung nach oben */
             align-items: center;
             height: 100vh;
             margin: 0;
-            font-family: 'Ubuntu', sans-serif; /* Schriftart auf Ubuntu gesetzt */
-            color: white; /* Schriftfarbe auf weiß gesetzt */
+            font-family: 'Ubuntu', sans-serif;
+            color: white;
+            transition: background-image 0.5s ease; /* Sanfter Übergang für das Hintergrundbild */
+            padding-top: 350px; /* Abstand zum oberen Rand erhöht */
         }
         #inputContainer {
             text-align: center;
         }
         h2 {
-            color: white; /* Schriftfarbe für "Wie heißt du?" */
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
         }
         #nameInput {
-            width: 300px; /* Breite des Eingabefelds */
-            height: 40px; /* Höhe des Eingabefelds */
-            font-size: 16px; /* Schriftgröße im Eingabefeld */
+            width: 90%; /* Responsive Breite */
+            max-width: 300px; /* Maximale Breite */
+            height: 40px;
+            font-size: 16px;
             margin-bottom: 20px; /* Abstand zwischen Eingabefeld und Button */
-            border: 2px solid #ADD8E6; /* Hellblauer Rahmen */
-            background-color: transparent; /* Keine Hintergrundfüllung */
-            color: white; /* Textfarbe im Eingabefeld auf weiß geändert */
-            border-radius: 5px; /* Abgerundete Ecken */
-            padding-left: 10px; /* Innenabstand links */
+            border: 2px solid #EC6602;
+            background-color: transparent;
+            color: white;
+            border-radius: 5px;
+            padding-left: 10px;
         }
         button {
-            background-color: #007BFF; /* Blaue Farbe */
-            color: white; /* Textfarbe */
-            border: none; /* Kein Rahmen */
-            border-radius: 5px; /* Abgerundete Ecken */
-            padding: 10px 20px; /* Innenabstand */
-            font-size: 16px; /* Schriftgröße */
-            cursor: pointer; /* Zeiger beim Hover */
-            box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3); /* Schatten für den 3D-Effekt */
-            transition: all 0.3s ease; /* Sanfte Übergänge bei Hover */
+            background-color: #EC6602; /* Buttonfarbe auf orange geändert */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(255, 165, 0, 0.3); /* Schattenfarbe angepasst */
+            transition: all 0.3s ease;
         }
         button:hover {
-            box-shadow: 0 10px 20px rgba(0, 123, 255, 0.5); /* Intensivierter Schatten beim Hover */
-            transform: translateY(-2px); /* Leichte Hebung beim Hover */
+            box-shadow: 0 10px 20px rgba(255, 165, 0, 0.5); /* Intensivierter Schatten beim Hover */
+            transform: translateY(-2px);
         }
         #result {
             display: none;
             font-size: 2em;
-            margin-top: 20px;
+            margin-top: 20px; /* Abstand zwischen Ergebnis und vorherigem Inhalt */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
         }
     </style>
 </head>
@@ -61,7 +66,7 @@
 
     <div id="inputContainer">
         <h2>Wie heißt du?</h2>
-        <input type="text" id="nameInput" placeholder="Dein Name">
+        <input type="text" id="nameInput" placeholder="Dein Name" required>
         <br>
         <button onclick="showStatement()">Übernehmen</button>
     </div>
@@ -71,9 +76,15 @@
     <script>
         function showStatement() {
             const name = document.getElementById('nameInput').value.trim();
+            
+            if (!name) { // Eingabevalidierung
+                alert('Bitte gib deinen Namen ein!');
+                return; // Abbrechen der Funktion
+            }
+
             const resultDiv = document.getElementById('result');
             
-            let statement = `Hier ist dein Statement, ${name}!`; // Standardtext
+            let statement = `Hier ist dein Statement, ${name}!`;
 
             // Personalisierte Ausgaben
             switch (name) {
@@ -87,13 +98,23 @@
                     statement = 'Der Kuchen war super!';
                     break;
                 default:
-                    // bleibt der Standardtext
+                    statement = `Schön dich kennenzulernen, ${name}!`; // Zufällige Antwort
                     break;
             }
 
             resultDiv.innerHTML = statement;
+
+            // Hintergrundbild ändern
+            document.body.style.backgroundImage = "url('Picture7.png')"; // Neues Hintergrundbild
+
             resultDiv.style.display = 'block';
-            document.getElementById('inputContainer').style.display = 'none';
+            
+            // Animation für das Ergebnis
+            resultDiv.style.opacity = '0';
+            setTimeout(() => {
+                resultDiv.style.opacity = '1';
+                document.getElementById('inputContainer').style.display = 'none';
+                }, 100); // Verzögerung für den Fade-In-Effekt
         }
     </script>
 
