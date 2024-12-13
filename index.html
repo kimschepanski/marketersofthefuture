@@ -7,17 +7,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400&display=swap" rel="stylesheet">
     <style>
         body {
-            background-image: url('Picture6.png'); /* Standard Hintergrundbild */
+            background-image: url('Picture6.png');
             background-size: cover;
             display: flex;
             flex-direction: column;
-            justify-content: center; /* Vertikale Ausrichtung auf Mitte */
-            align-items: center; /* Horizontale Ausrichtung auf Mitte */
+            justify-content: center;
+            align-items: center;
             height: 100vh;
             margin: 0;
             font-family: 'Ubuntu', sans-serif;
             color: white;
-            transition: background-image 0.5s ease; /* Sanfter Übergang für das Hintergrundbild */
+            transition: background-image 0.5s ease;
         }
         #inputContainer {
             text-align: center;
@@ -27,11 +27,11 @@
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
         }
         #nameInput {
-            width: 90%; /* Responsive Breite */
-            max-width: 300px; /* Maximale Breite */
+            width: 90%;
+            max-width: 300px;
             height: 40px;
             font-size: 16px;
-            margin-bottom: 20px; /* Abstand zwischen Eingabefeld und Button */
+            margin-bottom: 20px;
             border: 2px solid #EC6602;
             background-color: transparent;
             color: white;
@@ -39,28 +39,28 @@
             padding-left: 10px;
         }
         button {
-            background-color: #EC6602; /* Buttonfarbe auf orange geändert */
+            background-color: #EC6602; 
             color: white;
             border: none;
             border-radius: 5px;
             padding: 10px 20px;
             font-size: 16px;
             cursor: pointer;
-            box-shadow: 0 5px 15px rgba(255, 165, 0, 0.3); /* Schattenfarbe angepasst */
+            box-shadow: 0 5px 15px rgba(255, 165, 0, 0.3);
             transition: all 0.3s ease;
         }
         button:hover {
-            box-shadow: 0 10px 20px rgba(255, 165, 0, 0.5); /* Intensivierter Schatten beim Hover */
+            box-shadow: 0 10px 20px rgba(255, 165, 0, 0.5);
             transform: translateY(-2px);
         }
         #result {
             display: none;
-            font-size: 1.5em; /* Schriftgröße für das Ergebnis */
-            margin-top: 20px; /* Abstand zwischen Ergebnis und vorherigem Inhalt */
+            font-size: 1.5em; 
+            margin-top: 20px; 
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-            text-align: center; /* Text zentrieren */
-            padding-left: 20px; /* Linker Seitenabstand */
-            padding-right: 20px; /* Rechter Seitenabstand */
+            text-align: center; 
+            padding-left: 20px; 
+            padding-right: 20px; 
         }
     </style>
 </head>
@@ -79,76 +79,58 @@
         function showStatement() {
             const name = document.getElementById('nameInput').value.trim();
             
-            if (!name) { // Eingabevalidierung
+            if (!name) { 
                 alert('Please insert your name!');
-                return; // Abbrechen der Funktion
+                return; 
             }
 
             const resultDiv = document.getElementById('result');
-            
 
             // Personalisierte Ausgaben
+            let output = '';
+
             switch (name) {
-                // Michael
                 case 'Michael':
-                    output += `<h3>Sales often doesn’t fully or quickly <b>share their data</b>, while at the same time feedback is that <b>marketing materials miss the mark</b>.</h3>`;
-                    break;
                 case 'Michael Jacobi':
-                    output += `<h3>Sales often doesn’t fully or quickly <b>share their data</b>, while at the same time feedback is that <b>marketing materials miss the mark</b>.</h3>`;
-                    break;
                 case 'Mike':
                     output += `<h3>Sales often doesn’t fully or quickly <b>share their data</b>, while at the same time feedback is that <b>marketing materials miss the mark</b>.</h3>`;
                     break;
-                // Carina
                 case 'Carina':
-                    output += `<h3>With the <b>complexity</b> of managing campaigns across +70 countries and regions, as well as various business lines, it’s easy <b>to lose track</b>.</h3>`;
-                    break;
                 case 'Carina Gelbe':
                     output += `<h3>With the <b>complexity</b> of managing campaigns across +70 countries and regions, as well as various business lines, it’s easy <b>to lose track</b>.</h3>`;
                     break;
-                //Meggy
                 case 'Meggy':
-                    output += `<h3>It often takes <b>4–6 months</b> to move from the initial campaign idea to execution – <b>real-time</b> adjustments seem <b>impossible</b>.</h3>`;
-                    break;
                 case 'Meggy Schafer':
-                    output += `<h3>It often takes <b>4–6 months</b> to move from the initial campaign idea to execution – <b>real-time</b> adjustments seem <b>impossible</b>.</h3>`;
-                    break;
-                //Alina
                 case 'Alina':
-                    output += `<h3>It often takes <b>4–6 months</b> to move from the initial campaign idea to execution – <b>real-time</b> adjustments seem <b>impossible</b>.</h3>`;
-                    break;
                 case 'Alina Urdaneta':
-                    output += `<h3>It often takes <b>4–6 months</b> to move from the initial campaign idea to execution – <b>real-time</b> adjustments seem <b>impossible</b>.</h3>`;
-                    break;
-                //Daniel
                 case 'Daniel':
-                    output += `<h3>It often takes <b>4–6 months</b> to move from the initial campaign idea to execution – <b>real-time</b> adjustments seem <b>impossible</b>.</h3>`;
-                    break;
                 case 'Daniel Buchmann':
                     output += `<h3>It often takes <b>4–6 months</b> to move from the initial campaign idea to execution – <b>real-time</b> adjustments seem <b>impossible</b>.</h3>`;
                     break;
-                //Sontige Eingaben
                 default:
                     output += `<h3>Alternatives Statement tbd</h3>`; 
                     break;
             }
 
-             // Überschrift und allgemeine Frage
-            let output = `<h3>${name}, what is your experience?</h3>`;
+            // Überschrift und allgemeine Frage
+            output = output + `<p>${name}, what is your experience?</p>`;
+
+            // Hinzufügen eines Absatzes zwischen den Statements
+            output += `<br>`; // Hier wird ein Absatz hinzugefügt
+
+            
 
             resultDiv.innerHTML = output;
 
-            // Hintergrundbild ändern
-            document.body.style.backgroundImage = "url('Picture7.png')"; // Neues Hintergrundbild
+            document.body.style.backgroundImage = "url('Picture7.png')"; 
 
             resultDiv.style.display = 'block';
             
-            // Animation für das Ergebnis
             resultDiv.style.opacity = '0';
             setTimeout(() => {
                 resultDiv.style.opacity = '1';
                 document.getElementById('inputContainer').style.display = 'none';
-                }, 100); // Verzögerung für den Fade-In-Effekt
+                }, 100);
         }
     </script>
 
