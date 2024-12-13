@@ -86,54 +86,55 @@
 
             const resultDiv = document.getElementById('result');
             
-            // Überschrift und allgemeine Frage
-            let output = `<h3>${name}, what is your experience?</h3>`;
 
             // Personalisierte Ausgaben
             switch (name) {
                 // Michael
                 case 'Michael':
-                    output += `<p>Sales often doesn’t fully or quickly <b>share their data</b>, while at the same time feedback is that <b>marketing materials miss the mark</b>.</p>`;
+                    output += `<h3>Sales often doesn’t fully or quickly <b>share their data</b>, while at the same time feedback is that <b>marketing materials miss the mark</b>.</h3>`;
                     break;
                 case 'Michael Jacobi':
-                    output += `<p>Sales often doesn’t fully or quickly <b>share their data</b>, while at the same time feedback is that <b>marketing materials miss the mark</b>.</p>`;
+                    output += `<h3>Sales often doesn’t fully or quickly <b>share their data</b>, while at the same time feedback is that <b>marketing materials miss the mark</b>.</h3>`;
                     break;
                 case 'Mike':
-                    output += `<p>Sales often doesn’t fully or quickly <b>share their data</b>, while at the same time feedback is that <b>marketing materials miss the mark</b>.</p>`;
+                    output += `<h3>Sales often doesn’t fully or quickly <b>share their data</b>, while at the same time feedback is that <b>marketing materials miss the mark</b>.</h3>`;
                     break;
                 // Carina
                 case 'Carina':
-                    output += `<p>With the <b>complexity</b> of managing campaigns across +70 countries and regions, as well as various business lines, it’s easy <b>to lose track</b>.</p>`;
+                    output += `<h3>With the <b>complexity</b> of managing campaigns across +70 countries and regions, as well as various business lines, it’s easy <b>to lose track</b>.</h3>`;
                     break;
                 case 'Carina Gelbe':
-                    output += `<p>With the <b>complexity</b> of managing campaigns across +70 countries and regions, as well as various business lines, it’s easy <b>to lose track</b>.</p>`;
+                    output += `<h3>With the <b>complexity</b> of managing campaigns across +70 countries and regions, as well as various business lines, it’s easy <b>to lose track</b>.</h3>`;
                     break;
                 //Meggy
                 case 'Meggy':
-                    output += `<p>It often takes <b>4–6 months</b> to move from the initial campaign idea to execution – <b>real-time</b> adjustments seem <b>impossible</b>.</p>`;
+                    output += `<h3>It often takes <b>4–6 months</b> to move from the initial campaign idea to execution – <b>real-time</b> adjustments seem <b>impossible</b>.</h3>`;
                     break;
                 case 'Meggy Schafer':
-                    output += `<p>It often takes <b>4–6 months</b> to move from the initial campaign idea to execution – <b>real-time</b> adjustments seem <b>impossible</b>.</p>`;
+                    output += `<h3>It often takes <b>4–6 months</b> to move from the initial campaign idea to execution – <b>real-time</b> adjustments seem <b>impossible</b>.</h3>`;
                     break;
                 //Alina
                 case 'Alina':
-                    output += `<p>It often takes <b>4–6 months</b> to move from the initial campaign idea to execution – <b>real-time</b> adjustments seem <b>impossible</b>.</p>`;
+                    output += `<h3>It often takes <b>4–6 months</b> to move from the initial campaign idea to execution – <b>real-time</b> adjustments seem <b>impossible</b>.</h3>`;
                     break;
                 case 'Alina Urdaneta':
-                    output += `<p>It often takes <b>4–6 months</b> to move from the initial campaign idea to execution – <b>real-time</b> adjustments seem <b>impossible</b>.</p>`;
+                    output += `<h3>It often takes <b>4–6 months</b> to move from the initial campaign idea to execution – <b>real-time</b> adjustments seem <b>impossible</b>.</h3>`;
                     break;
                 //Daniel
                 case 'Daniel':
-                    output += `<p>It often takes <b>4–6 months</b> to move from the initial campaign idea to execution – <b>real-time</b> adjustments seem <b>impossible</b>.</p>`;
+                    output += `<h3>It often takes <b>4–6 months</b> to move from the initial campaign idea to execution – <b>real-time</b> adjustments seem <b>impossible</b>.</h3>`;
                     break;
                 case 'Daniel Buchmann':
-                    output += `<p>It often takes <b>4–6 months</b> to move from the initial campaign idea to execution – <b>real-time</b> adjustments seem <b>impossible</b>.</p>`;
+                    output += `<h3>It often takes <b>4–6 months</b> to move from the initial campaign idea to execution – <b>real-time</b> adjustments seem <b>impossible</b>.</h3>`;
                     break;
                 //Sontige Eingaben
                 default:
-                    output += `<p>Alternatives Statement tbd</p>`; 
+                    output += `<h3>Alternatives Statement tbd</h3>`; 
                     break;
             }
+
+             // Überschrift und allgemeine Frage
+            let output = `<h3>${name}, what is your experience?</h3>`;
 
             resultDiv.innerHTML = output;
 
